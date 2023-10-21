@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Giới Thiệu Sản Phẩm</title>
+    <link rel="stylesheet" href="asset/css/base.css">
+    <link rel="stylesheet" href="asset/css/gioi-thieu-san-pham.css">
+</head>
+
+<body>
+    <!-- header  -->
+    <div class="header">
+        <div class="inner-wrap">
+            <div class="inner-pc">
+                <a href="\" class="inner-logo">
+                    <img src="asset/images/logo.png" alt="">
+                </a>
+                <ul class="list">
+                    <li><a href="#">SALE 50%</a></li>
+                    <li><a href="#">GIÀY NỮ</a></li>
+                    <li><a href="#">GIÀY NAM</a></li>
+                    <li><a href="#">BALO - TÚI</a></li>
+                    <li><a href="#">PHỤ KIỆN </a></li>
+                    <li><a href="#">SẢN PHẨM BÁN CHẠY</a></li>
+                </ul>
+                <div class="inner-social">
+                    <form action="" class="inner-search">
+                        <input type="text" placeholder="Tìm kiếm">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <a href="" class="inner-icon">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                    <a href="" class="inner-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="inner-screen">
+                <div class="inner-bars">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <a class="inner-logo">
+                    <img src="asset/images/logo.png" alt="">
+                </a>
+                <div class="inner-social">
+                    <span><i class="fa-regular fa-user"></i></span>
+                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <span><i class="fa-solid fa-cart-shopping"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end header  -->
+
+    <!-- section 1 -->
+    <div class="section-1">
+        <div class="container">
+            <div class="inner-wrap">
+                <div class="inner-image">
+                    <div class="main">
+                        <img src="images/anh1.jpg" alt="" class="img-main">
+                        <div class="control prev"><i class="fa-solid fa-angle-left"></i></div>
+                        <div class="control next"><i class="fa-solid fa-angle-right"></i></div>
+                    </div>
+                    <div class="list-image">
+                        <div><img src="asset/images/cur1.jpg" alt=""></div>
+                        <div><img src="asset/images/cur2.jpg" alt=""></div>
+                        <div><img src="asset/images/cur3.jpg" alt=""></div>
+                        <div><img src="asset/images/cur4.jpg" alt=""></div>
+                        <div><img src="asset/images/cur5.jpg" alt=""></div>
+                        <div><img src="asset/images/cur6.jpg" alt=""></div>
+                        <div><img src="asset/images/cur7.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="inner-content">
+                    <div class="inner-title">
+                        Giày cao gót MWC NUCG- 4431 Sandal Cao Gót Nữ Quai Mãnh Đính Đá Sang Chảnh Gót Nhọn Phối Màu
+                        Thời Trang
+                    </div>
+                    <div class="inner-evaluate">
+                        <div class="inner-icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="inner-text">
+                            225 Đánh giá
+                        </div>
+                        <div class="inner-text">
+                            925 Số lượng thích
+                        </div>
+                    </div>
+                    <div class="inner-core">
+                        235.000 đ
+                    </div>
+                    <div class="inner-buy">
+                        <div class="inner-count">
+                            Số Lượng
+                        </div>
+                        <div id="buy-amount">
+                            <button class="minus-btn" onclick="handleMins()"><i class="fa-solid fa-minus"></i></button>
+                            <input type="text" name="amount" id="amount" value="1">
+                            <button class="plus-btn" onclick="handLePlus()"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <div class="inner-count">
+                            93 sản phẩm có sẵn
+                        </div>
+                    </div>
+                    <div class="inner-button">
+                        <a href="" class="button button-highlight">Mua ngay</a>
+                        <a href="" class="button button-white">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Thêm vào giỏ hàng</span>
+                        </a>
+                    </div>
+                    <div class="inner-box">
+                        <div class="inner-div">
+                            <i class="fa-solid fa-box-open"></i>
+                            <span>Bảo hành keo vĩnh viễn</span>
+                        </div>
+                        <div class="inner-div">
+                            <i class="fa-solid fa-car"></i>
+                            <span>Miễn phí vận chuyển toàn quốc <br>
+                                cho đơn hàng từ 150k</span>
+                        </div>
+                        <div class="inner-div">
+                            <i class="fa-solid fa-share"></i>
+                            <span>Đổi trả dễ dàng <br>
+                                (trong vòng 7 ngày nếu lỗi nhà sản xuất)</span>
+                        </div>
+                        <div class="inner-div">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                            <span>Hotline 1900.633.349 <br>
+                                hỗ trợ từ 8h30-21h30</span>
+                        </div>
+                        <div class="inner-div">
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Giao hàng tận nơi, <br>
+                                nhận hàng xong thanh toán</span>
+                        </div>
+                        <div class="inner-div">
+                            <i class="fa-solid fa-people-carry-box"></i>
+                            <span>Ưu đãi tích điểm và
+                                hưởng quyền lợi thành viên từ MWC</span>
+                        </div>
+                    </div>
+                    <hr style="color:#f1ebeb;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section 1 -->
+
+    <!-- section 2 -->
+    <div class="section-2">
+        <div class="container">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="chi-tiet-san-pham-tab" data-toggle="tab" data-target="#chi-tiet-san-pham" type="button" role="tab" aria-controls="chi-tiet-san-pham" aria-selected="true">CHI TIẾT SẢN PHẨM</button>
+                  <button class="nav-link" id="binh-luan-tab" data-toggle="tab" data-target="#binh-luan" type="button" role="tab" aria-controls="binh-luan" aria-selected="false">BÌNH LUẬN</button>
+                  <button class="nav-link" id="danh-gia-tab" data-toggle="tab" data-target="#danh-gia" type="button" role="tab" aria-controls="danh-gia" aria-selected="false">ĐÁNH GIÁ</button>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="chi-tiet-san-pham" role="tabpanel" aria-labelledby="chi-tiet-san-pham-tab">
+                    <div class="inner-title">
+                        MÃ SẢN PHẨM :  Giày cao gót MWC NUCG - 4431
+                    </div>
+                    <ul class="inner-content-1">
+                        <li>Thiết kế với dáng mũi nhọn , quai mãnh đính đá lắp lánh , gót nhọn cao 9cm...</li>
+                        <li>Được thiết kế form chuẩn với bàn chân của phụ nữ Việt Nam, sườn 4 lớp mang đến sự vững chắc giúp cho các nàng hoàn toàn tự tin trên từng bước chân.</li>
+                        <li>Phù hợp đi tiệc, đi làm, công sở, đi học, đi chơi, du lịch…</li>
+                    </ul>
+                    <div class="inner-title">
+                        CHI TIẾT SẢN PHẨM
+                    </div>
+                    <ul class="inner-content-2">
+                        <li>Chiều cao : 9cm</li>
+                        <li>Đế : PVC êm mềm, độ đàn hồi tốt, chống trơn trượt</li>
+                        <li>Chất liệu : da bóng</li>
+                        <li>Kiểu dáng : Sandal cao gót</li>
+                        <li>Màu sắc : Bạc - Đen</li>
+                        <li>Size : 35 - 36 - 37 - 38 - 39</li>
+                        <li>Xuất xứ thương hiệu : Việt Nam</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade"  id="binh-luan" role="tabpanel" aria-labelledby="binh-luan-tab">Không có bình luận</div>
+                <div class="tab-pane fade" id="danh-gia" role="tabpanel" aria-labelledby="danh-gia-tab">Vui lòng đăng nhập để bình luận & đánh giá sản phẩm!</div>
+              </div>
+        </div>
+    </div>
+    <!-- end section 2 -->
+
+    <!-- section 3 -->
+    <div class="section-3">
+        <div class="container">
+            <div class="inner-head">
+                <div class="inner-title">CÓ THỂ BẠN CŨNG THÍCH</div>
+            </div>
+            <div class="inner-list">
+                <a href="" class="inner-box">
+                    <div class="inner-image">
+                        <img src="asset/images/gt2.jpg" alt="">
+                    </div>
+                    <div class="inner-title">
+                        Giày cao gót MWC NUCG- 4409 Sandal Cao Gót Quai...
+                    </div>
+                    <div class="inner-core">
+                        195.000 đ
+                    </div>
+                </a>
+                <a href="" class="inner-box">
+                    <div class="inner-image">
+                        <img src="asset/images/gt1.jpg" alt="">
+                    </div>
+                    <div class="inner-title">
+                        Giày Sandal Cao Gót MWC - 4372 Sandal Cao Gót Qu...
+                    </div>
+                    <div class="inner-core">
+                        215.000 đ
+                    </div>
+                </a>
+                <a href="" class="inner-box">
+                    <div class="inner-image">
+                        <img src="asset/images/gt3.jpg" alt="">
+                    </div>
+                    <div class="inner-title">
+                        Giày cao gót MWC NUCG- 4418 Cao Gót Đính Khóa...
+                    </div>
+                    <div class="inner-core">
+                        235.000 đ
+                    </div>
+                </a>
+                <a href="" class="inner-box">
+                    <div class="inner-image">
+                        <img src="asset/images/gt4.jpg" alt="">
+                    </div>
+                    <div class="inner-title">
+                        Giày cao gót MWC NUCG- 4443...
+                    </div>
+                    <div class="inner-core">
+                        259.000 đ
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- end section 3 -->
+
+    <!-- infoFooter   -->
+    <div class="info-footer">
+        <div class="container-ft">
+            <hr>
+            <div class="inner-list">
+                <div class="inner-box">
+                    <div class="inner-title">
+                        GỌI MUA HÀNG ONLINE (08:00 - 21: 00 mỗi ngày)
+                    </div>
+                    <div class="inner-sdt">
+                        1900.321.563
+                    </div>
+                    <div class="inner-sub-title">
+                        Tất cả các ngày trong tuần (Trừ tết Âm Lịch)
+                    </div>
+                    <div class="inner-title">
+                        GÓP Ý & KHIẾU NẠI (08:30 - 20:30)
+                    </div>
+                    <div class="inner-sdt">
+                        1900.000.563
+                    </div>
+                    <div class="inner-sub-title">
+                        Tất cả các ngày trong tuần (Trừ tết Âm Lịch)
+                    </div>
+                </div>
+                <div class="inner-box">
+                    <div class="inner-title">
+                        THÔNG TIN
+                    </div>
+                    <div class="inner-text">
+                       Giới thiệu về MWC
+                    </div>
+                    <div class="inner-text">
+                        Than Phiền Góp Ý
+                    </div>
+                    <div class="inner-text">
+                        Chính sách và quy định
+                    </div>
+                </div>
+                <div class="inner-box">
+                    <div class="inner-title">
+                        FAQ
+                    </div>
+                    <div class="inner-text">
+                        Vận chuyển
+                    </div>
+                    <div class="inner-text">
+                        Chính sách đổi trả
+                    </div>
+                    <div class="inner-text">
+                        Chính sách đổi trả bảo hành
+                    </div>
+                    <ul class="menu">
+                        <li>
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-instagram"></i>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-tiktok"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end infoFooter    -->
+
+    <!-- footer  -->
+    <div class="footer">
+        <div class="container-ft">
+            <div class="inner-wrap">
+                <div class="inner-tt">
+                    <div class="inner-title">
+                        CÔNG TY TNHH SẢN XUẤT THƯƠNG MẠI DỊCH VỤ MWC
+                    </div>
+                    <div class="inner-text">
+                        Địa chỉ: Số 7 đường 3A, khu dân cư Ấp 5, X. Phong Phú, H. Bình Chánh., Tp. HCM
+                    </div>
+                    <div class="inner-text">
+                        MST: 0314746543
+                    </div>
+                </div>
+                <div class="inner-image">
+                    <div class="inner-photo">
+                        <img src="asset/images/bocongthuong.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end footer  -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="asset/js/script.js"></script>
+</body>
+
+</html>
