@@ -401,3 +401,23 @@ img{
     }
 }
 /* end footer  */
+
+/* boxhead */
+.inner-headBox{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.inner-headBox .inner-title{
+    font-size: 14px;
+    color: var(--color-main);
+    text-decoration:underline;
+    padding-bottom: 10px;
+}
+
+.inner-headBox .inner-sub-title{
+    font-size: 20px;
+    color: #252a2b;
+    padding: 10px 0;
+}
+/*end boxhead */

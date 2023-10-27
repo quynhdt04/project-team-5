@@ -1,0 +1,117 @@
+
+/* section 1 */
+.section-1{
+    /* background: #fff; */
+}
+
+.section-1 .inner-head {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.section-1 .inner-head .inner-title{
+    font-size: 20px;
+    color: var(--color-main);
+}
+
+.section-1 .inner-wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+} 
+
+.section-1 .inner-wrap .inner-image{
+    width: 48%;
+    margin-right: 2%;
+}
+
+.section-1 .inner-wrap .inner-image img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.section-1 .inner-wrap .inner-list{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.section-1 .inner-wrap .inner-list .inner-box{
+    width: calc(100%/2 - 20px/2);
+    margin-bottom: 20px;
+}
+
+.section-1 .inner-wrap .inner-list .inner-box .inner-img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.section-1 .inner-wrap .inner-list .inner-box .inner-title{
+    font-size: 14px;
+    color: var(--color-main);
+    text-align: center;
+    margin-top: 10px;
+}
+
+.section-1 .inner-wrap .inner-list .inner-box .inner-core{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-main);
+    text-align: center;
+}
+
+@media (max-width: 991.98px){
+    .section-1 .inner-wrap .inner-image{
+        width: 100%;
+        margin-right: 0%;
+        margin-bottom: 25px;
+    }
+
+    .section-1 .inner-wrap .inner-list {
+        width: 100%;
+    }
+
+    .section-1 .inner-wrap .inner-list .inner-box {
+        width: calc(100%/2 - 15px/2);
+    }
+}
+/* end section 1 */
+
+/* section  */
+.section {
+    padding: 30px 0;
+}
+
+.section .inner-wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* margin-top: 20px; */
+}
+
+.section .inner-wrap .inner-box{
+    width: calc(100%/4 - 40px/4);
+}
+
+.section .inner-wrap .inner-box .inner-title{
+    font-size: 14px;
+    color: var(--color-text);
+    text-align: center;
+    margin: 5px 0;
+}
+
+.section .inner-wrap .inner-box .inner-core{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-main);
+    text-align: center;
+}
+
+@media (max-width: 991.98px){
+    .section .inner-wrap .inner-box {
+        width: calc(100%/2 - 15px/2);
+        margin-bottom: 25px;
+    }
+}
+/*end section  */
