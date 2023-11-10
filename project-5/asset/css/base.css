@@ -29,6 +29,10 @@ a:hover{
     text-decoration: none;
 }
 
+a{
+    text-decoration: none;
+}
+
 ul{
     margin: 0;
     padding: 0;
