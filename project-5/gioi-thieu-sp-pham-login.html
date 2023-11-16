@@ -35,11 +35,22 @@
                         <input type="text" placeholder="Tìm kiếm">
                         <button><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
-                    <a href="dangky.html" class="inner-icon">
-                        <i class="fa-regular fa-user"></i>
-                    </a>
-                    <a href="" class="inner-icon" id="content">
-                        <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="inner-user">
+                        <img src="asset/images/icon_account.png">
+                        <div class="logout">
+                            <ul>
+                                <li>
+                                    <a href="user.html">
+                                        <img src="asset/images/icon_account.png">
+                                        <span> Nguyễn Thị Kiều Hương</span>
+                                    </a>
+                                </li>
+                                <li><button onclick="Logout()"> Đăng xuất </button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="" class="inner-icon notReload">
+                        <i class="fa-solid fa-cart-shopping" id="cartshop"></i>
                     </a>
                 </div>
             </div>
@@ -51,7 +62,7 @@
                     <img src="asset/images/logo.png" alt="">
                 </a>
                 <div class="inner-social">
-                    <span><i class="fa-regular fa-user"></i></span>
+                    <span><img src="asset/images/icon_account.png" alt=""></span>
                     <span><i class="fa-solid fa-magnifying-glass"></i></span>
                     <span><i class="fa-solid fa-cart-shopping"></i></span>
                 </div>
@@ -81,7 +92,7 @@
                     </div>
                 </div>
                 <div class="inner-content">
-                    <div class="inner-title">
+                    <div class="inner-title" id="content-title">
                         Giày cao gót MWC NUCG- 4431 Sandal Cao Gót Nữ
                     </div>
                     <div class="inner-evaluate">
@@ -99,28 +110,28 @@
                             925 Số lượng thích
                         </div>
                     </div>
-                    <div class="inner-core">
-                        235.000 đ
+                    <div class="inner-core" id="core">
+                       <span> 235.000</span><sup> đ</sup>
                     </div>
-                    <!-- <div class="inner-buy">
-                        <div class="inner-count">
+                    <div class="inner-buy">
+                        <!-- <div class="inner-count">
                             Số Lượng
-                        </div>
-                        <div id="buy-amount">
+                        </div> -->
+                        <!-- <div id="buy-amount">
                             <button class="minus-btn" onclick="handleMins()"><i class="fa-solid fa-minus"></i></button>
                             <input type="text" name="amount" id="amount" value="1">
                             <button class="plus-btn" onclick="handLePlus()"><i class="fa-solid fa-plus"></i></button>
-                        </div>
-                        <div class="inner-count">
+                        </div> -->
+                        <!-- <div class="inner-count">
                             93 sản phẩm có sẵn
-                        </div>
-                    </div> -->
+                        </div> -->
+                    </div>
                     <div class="inner-button">
                         <!-- <a href="" class="button button-highlight">Mua ngay</a> -->
-                        <a href="" class="button button-white" id="shopping">
+                        <div class="button button-white" id="add-product">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <span>Thêm vào giỏ hàng</span>
-                        </a>
+                        </div>
                     </div>
                     <div class="inner-box">
                         <div class="inner-div">
@@ -194,7 +205,7 @@
                     </ul>
                 </div>
                 <div class="tab-pane fade"  id="binh-luan" role="tabpanel" aria-labelledby="binh-luan-tab">Không có bình luận</div>
-                <div class="tab-pane fade" id="danh-gia" role="tabpanel" aria-labelledby="danh-gia-tab">Vui lòng đăng nhập để bình luận & đánh giá sản phẩm!</div>
+                <div class="tab-pane fade" id="danh-gia" role="tabpanel" aria-labelledby="danh-gia-tab"></div>
               </div>
         </div>
     </div>
@@ -352,6 +363,44 @@
         </div>
     </div>
     <!-- end footer  -->
+    <div class="cart">
+        <div class="cart-wrap">
+            <h2>Cart</h2>
+            <!-- <div class="cart-icon"> -->
+                <i class="fa-solid fa-x"></i>
+            <!-- </div> -->
+        </div>
+        <form action="">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>SL</th>
+                        <th>Chọn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td><img src="images/balo12.jpg" alt=""><span class="name">Giày cao gót MWC NUCG- 4431 Sandal</span></td>
+                        <td> <p><span>390.000</span><sup>đ</sup></p></td>
+                        <td><input type="number" value="1" min="0"></td>
+                        <td><span>Xóa</span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/balo14.jpg" alt=""><span>Iphone6</span></td>
+                        <td><span>329 000đ</span></td>
+                        <td><input type="number" value="1" min="0"></td>
+                        <td>Xóa</td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <div class="price-total">
+                <p>Tổng tiền: <span>0</span><sup>đ</sup></p>
+            </div>
+            <button id="closeOrder">Chốt đơn</button>
+        </form>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -359,13 +408,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
-    <script src="asset/js/script.js"></script>
-    <script>
-        const content = document.getElementById("content");
-        content.addEventListener("click", () =>{
-            alert("Bạn chưa đăng nhập");
-        })
-    </script>
+    <script src="asset/js/page-gtsnl.js"></script>
 </body>
 
 </html>

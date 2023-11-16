@@ -4,18 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>balo tui</title>
+    <title>dang ky</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="asset/css/base.css">
-    <link rel="stylesheet" href="asset/css/ploai-sap.css">
 </head>
 
 <body>
+    <style>
+        /* body{
+            background: #ddd;
+        } */
+        .register {
+            /* background: #fff; */
+            padding: 40px 0;
+        }
+
+        .register__wrap {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #2E295F;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .register__title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .register__form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .register__form label {
+            font-size: 17.5px;
+            margin: 10px 0;
+            color: #ddd;
+        }
+
+        .register__form input {
+            border: 1px solid #000;
+            border-radius: 6px;
+            padding: 10px 15px;
+        }
+
+        .register__text {
+            border: 1px solid #573A8A;
+            background: #573A8A;
+            padding: 10px 50px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .register__text a {
+            color: #fff;
+        }
+
+        .register__button{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+    </style>
     <!-- header  -->
     <div class="header">
         <div class="inner-wrap">
@@ -61,48 +118,29 @@
     </div>
     <!-- end header  -->
 
-    <!-- title  -->
-    <div class="inner-search">
-        <div class="container">
-            <div class="inner-text">
-                BALO- TÚI
-            </div>
-        </div>
-    </div>
-    <!-- end title  -->
-
     <!-- section  -->
-    <div class="section">
-        <div class="container">
-            <div class="inner-wrap" id="product">
-                <!-- <div class="inner-box">
-                    <a href="" class="inner-image">
-                        <img src="image/mwc.jpg" alt="">
-                    </a>
-                    <div class="inner-title">
-                        Giày cao gót MWC NUCH-4437
-                    </div>
-                    <div class="inner-core">
-                        250.000 đ
-                    </div>
-                </div> -->
+    <div class="register">
+        <div class="register__wrap">
+            <div class="register__title">
+                Đăng Ký
             </div>
-            <div class="content_paging">
-                <ul>
-                    <li class="btn-pre btn-active"><i class="fa-solid fa-angle-left"></i></li>
-                    <div class="number_page" id="number-page">
-                        <!-- <li class="active">
-                            <a href="">1</a>
-                        </li>
-                        <li>
-                            <a href="">2</a>
-                        </li>
-                        <li>
-                            <a href="">3</a>
-                        </li> -->
-                    </div>
-                    <li class="btn-next"><i class="fa-solid fa-angle-right"></i></li>
-                </ul>
+            <form action="" class="register__form">
+
+                <label for="phone">Số Điện Thoại: </label>
+                <input type="text" placeholder="+84" id="phone">
+
+                <label for="fullName">Tên Đăng Nhập: </label>
+                <input type="text" placeholder="Nhập tên đăng nhập" id="fullName">
+
+                <label for="password">Mật Khẩu: </label>
+                <input type="password" placeholder="Nhập mật khẩu" id="password">
+
+                <label for="passwordEnter">Nhập Lại Mật Khẩu:</label>
+                <input type="password" placeholder="Nhập lại mật khẩu" id="passwordEnter">
+            </form>
+            <div class="register__button">
+                <div class="register__text" id="register__next"><a href="dangnhap.html">Đăng Ký</a></div>
+                <div class="register__text"><a href="dangnhap.html"> Đăng Nhập</a></div>
             </div>
         </div>
     </div>
@@ -180,6 +218,7 @@
     </div>
     <!-- end infoFooter    -->
 
+
     <!-- footer  -->
     <div class="footer">
         <div class="container-ft">
@@ -204,7 +243,13 @@
         </div>
     </div>
     <!-- end footer  -->
-    <script src="asset/js/page-balo-tui.js"></script>
+    <script>
+        const tt = document.querySelector("#register__next");
+        console.log(tt);
+        tt.addEventListener("click", () => {
+            alert("Đăng ký thành công");
+        })
+    </script>
 </body>
 
 </html>

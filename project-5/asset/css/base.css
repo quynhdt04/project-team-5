@@ -65,6 +65,7 @@ img{
     border: 1px solid var(--color-highlight);
     background: #fff;
     padding: 8px 55px;
+    cursor: pointer;
 }
 
 .button-white:hover{
@@ -114,6 +115,7 @@ img{
 
 .header .inner-social{
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -149,6 +151,24 @@ img{
 
 .header .inner-wrap .inner-screen{
     display: none;
+}
+
+.header .inner-social .inner-user{
+    width: 32px;
+    height: 32px;
+}
+
+.header .inner-social .inner-user img{
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.header .inner-wrap .inner-screen .inner-social img{
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
 }
 
 @media (max-width: 1100px){
