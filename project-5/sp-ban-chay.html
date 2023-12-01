@@ -33,8 +33,17 @@
                 </ul>
                 <div class="inner-social">
                     <form action="" class="inner-search">
-                        <input type="text" placeholder="Tìm kiếm">
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="text" id="myInput" onkeyup="search()" placeholder="Tìm kiếm"
+                            title="Type in a name">
+                        <button onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <div class="dropdown-content">
+                            <ul id="myUL" class="myUL">
+                                <li><a href="giay-nu.html">Giày nữ</a></li>
+                                <li><a href="giay-nam.html">Giày nam</a></li>
+                                <li><a href="balo-tui.html">Balô-túi</a></li>
+                                <li><a href="phu-kien.html">Phụ kiện</a></li>
+                            </ul>
+                        </div>
                     </form>
                     <a href="dangky.html" class="inner-icon">
                         <i class="fa-regular fa-user"></i>
@@ -205,6 +214,29 @@
     </div>
     <!-- end footer  -->
     <script src="asset/js/page-sp-ban-chay.js"></script>
+    <script>
+        const content = document.getElementById("content");
+        content.addEventListener("click", () => {
+            alert("Bạn chưa đăng nhập");
+        })
+
+        function search() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

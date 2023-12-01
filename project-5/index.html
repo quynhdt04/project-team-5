@@ -23,7 +23,6 @@
                     <img src="asset/images/logo.png" alt="">
                 </a>
                 <ul class="list">
-                    <!-- <li><a href="#">SALE 50%</a></li> -->
                     <li><a href="giay-nu.html">GIÀY NỮ</a></li>
                     <li><a href="giay-nam.html">GIÀY NAM</a></li>
                     <li><a href="balo-tui.html">BALO - TÚI</a></li>
@@ -32,8 +31,16 @@
                 </ul>
                 <div class="inner-social">
                     <form action="" class="inner-search">
-                        <input type="text" placeholder="Tìm kiếm">
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="text" id="myInput" onkeyup="search()" placeholder="Tìm kiếm" title="Type in a name">
+                        <button  onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <div class="dropdown-content">
+                            <ul id="myUL" class="myUL">
+                            <li><a href="giay-nu.html">Giày nữ</a></li>
+                            <li><a href="giay-nam.html">Giày nam</a></li>
+                            <li><a href="balo-tui.html">Balô-túi</a></li>
+                            <li><a href="phu-kien.html">Phụ kiện</a></li>
+                            </ul>
+                        </div>
                     </form>
                     <a href="dangky.html" class="inner-icon">
                         <i class="fa-regular fa-user"></i>
@@ -277,153 +284,6 @@
     </div>
     <!-- end   BALO THỜI TRANG -->
    
-    <!-- DÉP VÀ SANDAL NỮ-->
-    <!-- <div class="section">
-        <div class="container">
-            <div class="inner-headBox">
-                <a href="balo-tui.html">
-                    <div class="inner-title">
-                        XEM TẤT CẢ
-                    </div>
-                </a>
-                <hr>
-                <a href="balo-tui.html" >
-                    <div class="inner-sub-title">
-                        DÉP VÀ SANDAL NỮ
-                    </div>
-                </a>
-            </div>
-            <div class="inner-wrap">
-                <div class="inner-box">
-                    <a href="gioi-thieu-san-pham.html" class="inner-img">
-                        <img src="asset/images/dep1.jpg" alt="">
-                    </a>
-                    <a href="gioi-thieu-san-pham.html" class="inner-content">
-                        <div class="inner-title">
-                            Dép nữ MWC NUDE- 8291 Dép Nữ Đế Bằng, Dép Nữ...
-                        </div>
-                        <div class="inner-core">
-                            180,000đ
-                        </div>
-                    </a>
-                </div>
-                <div class="inner-box">
-                    <a href="gioi-thieu-san-pham.html" class="inner-img">
-                        <img src="asset/images/dep2.jpg" alt="">
-                    </a>
-                    <a href="gioi-thieu-san-pham.html" class="inner-content">
-                        <div class="inner-title">
-                            Dép nữ MWC NUDE-8332 Dép Nữ Đế Bánh Mì Cao 6c...
-                        </div>
-                        <div class="inner-core">
-                            150,000đ
-                        </div>
-                    </a>
-                </div>
-                <div class="inner-box">
-                    <a href="gioi-thieu-san-pham.html" class="inner-img">
-                        <img src="asset/images/dep3.jpg" alt="">
-                    </a>
-                    <a href="gioi-thieu-san-pham.html" class="inner-content">
-                        <div class="inner-title">
-                            Giày sandal nữ MWC NUSE-2423...
-                        </div>
-                        <div class="inner-core">
-                            250,000đ
-                        </div>
-                    </a>
-                </div>
-                <div class="inner-box">
-                    <a href="gioi-thieu-san-pham.html" class="inner-img">
-                        <img src="asset/images/dep4.jpg" alt="">
-                    </a>
-                    <a href="gioi-thieu-san-pham.html" class="inner-content">
-                        <div class="inner-title">
-                            Giày sandal nữ MWC NUSD-2426 Sandal 2 Quai Nga...
-                        </div>
-                        <div class="inner-core">
-                            250,000đ
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- end  DÉP VÀ SANDAL NỮ -->
-
-    <!-- SANDAL VÀ DÉP NAM-->
-    <!-- <div class="section">
-        <div class="container">
-            <div class="inner-headBox">
-                <a href="giay-nu.html">
-                    <div class="inner-title">
-                        XEM TẤT CẢ
-                    </div>
-                </a>
-                <hr>
-                <a href="" >
-                    <div class="inner-sub-title">
-                        SANDAL VÀ DÉP NAM
-                    </div>
-                </a>
-            </div>
-            <div class="inner-wrap">
-                <div class="inner-box">
-                    <a href="gioi-thieu-san-pham.html" class="inner-img">
-                        <img src="asset/images/depn1.jpg" alt="">
-                    </a>
-                    <a href="gioi-thieu-san-pham.html" class="inner-content">
-                        <div class="inner-title">
-                           Dép nam MWC- 7720 Dép Nam Quai Ngang Viền Chỉ...
-                        </div>
-                        <div class="inner-core">
-                            195,000đ
-                        </div>
-                    </a>
-                </div>
-                <div class="inner-box">
-                    <a href="gioi-thieu-san-pham.html" class="inner-img">
-                        <img src="asset/images/depn2.jpg" alt="">
-                    </a>
-                    <a href="gioi-thieu-san-pham.html" class="inner-content">
-                        <div class="inner-title">
-                            Giày Sandal Nam MWC- 7052 Giày Dép Sandal Nam...
-                        </div>
-                        <div class="inner-core">
-                            195,000đ
-                        </div>
-                    </a>
-                </div>
-                <div class="inner-box">
-                    <a href="gioi-thieu-san-pham.html" class="inner-img">
-                        <img src="asset/images/depn3.jpg" alt="">
-                    </a>
-                    <a href="gioi-thieu-san-pham.html" class="inner-content">
-                        <div class="inner-title">
-                            Dép nam MWC NADE-7801 Dép Quai Ngang Chữ H...
-                        </div>
-                        <div class="inner-core">
-                            180,000đ
-                        </div>
-                    </a>
-                </div>
-                <div class="inner-box">
-                    <a href="gioi-thieu-san-pham.html" class="inner-img">
-                        <img src="asset/images/depn4.jpg" alt="">
-                    </a>
-                    <a href="gioi-thieu-san-pham.html" class="inner-content">
-                        <div class="inner-title">
-                            Giày sandal nam MWC NASD-7077
-                        </div>
-                        <div class="inner-core">
-                            275,000đ
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- end  SANDAL VÀ DÉP NAM-->
 
     <!-- GIÀY NAM THỜI TRANG-->
     <div class="section">
@@ -680,6 +540,24 @@
         content.addEventListener("click", () =>{
             alert("Bạn chưa đăng nhập");
         })
+
+        function search() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+        // search();
     </script>
 </body>
 

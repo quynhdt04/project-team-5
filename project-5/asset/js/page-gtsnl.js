@@ -64,35 +64,6 @@ nextBnt.addEventListener('click', e=>{
 updateImageByIndex(0)
 
 
-// count 
-// let = amountElement = document.getElementById('amount');
-//         let amount = amountElement.value;
-//         let render = (amount) => {
-//             amountElement.value = amount
-//         }
-//         // Handle Plus 
-//         let handLePlus = () =>{
-//             // alert();
-//             amount++;
-//             render(amount);
-//         }
-
-//         // handle minus 
-//         let handleMins = () => {
-//             if(amount > 1){
-//                 amount--;
-//             }
-//             render(amount);
-//         }
-
-//         amountElement.addEventListener('input',()=> {
-//             amount = amountElement.value;
-//             amount = parseInt(amount);
-//             amount = (isNaN(amount) || amount == 0)?1:amount;
-//             render(amount);
-//         });
-// end count 
-
 
 //cart
 

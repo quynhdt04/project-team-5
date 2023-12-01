@@ -11,65 +11,45 @@
     <link rel="stylesheet" href="asset/css/base.css">
 </head>
 
-<body onload="CheckLogin()">
+<body>
     <style>
-        .login {
-            padding: 40px 0;
-        }
-
-        .login__wrap {
-            max-width: 500px;
-            margin: 0 auto;
-            background: #2E295F;
-            padding: 60px;
-            border-radius: 8px;
-        }
-
-        .login__title {
+        .log{
+            margin:  50px auto 20px auto;
             text-align: center;
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 20px;
+            background: #24323D;
+            max-width: 450px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .log__title h1{
             color: #fff;
         }
 
-        .login__form {
-            display: flex;
-            flex-direction: column;
+        .log__input{
+            margin: 25px 0;
         }
 
-        .login__form label {
-            font-size: 17.5px;
-            margin: 10px 0;
-            color: #ddd;
+        .log__input input{
+            padding: 15px;
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #097177;
+        }
+        .signup-link{
+            display: block;
+            margin-bottom: 15px;
+            margin-right: -70%;
+            color: #fff;
+            font-weight: 600;
+            text-decoration: underline;
         }
 
-        .login__form input {
-            border: 1px solid #000;
-            border-radius: 6px;
-            padding: 10px 15px;
-            margin-bottom: 20px;
-        }
-
-        .login__form input:nth-child(2) {
-            margin-bottom: 30px;
-        }
-
-        .login__button {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-
-        .login__text {
-            border: 1px solid #573A8A;
-            background: #573A8A;
+        .btn{
+            padding: 10px 35px;
             border-radius: 8px;
-            padding: 10px 40px;
-        }
-
-        .login__text a {
-            color: #ddd;
+            background: #1AB188;
+            margin-bottom: 20px;
         }
     </style>
     <!-- header  -->
@@ -80,7 +60,6 @@
                     <img src="asset/images/logo.png" alt="">
                 </a>
                 <ul class="list">
-                    <!-- <li><a href="#">SALE 50%</a></li> -->
                     <li><a href="giay-nu.html">GIÀY NỮ</a></li>
                     <li><a href="giay-nam.html">GIÀY NAM</a></li>
                     <li><a href="balo-tui.html">BALO - TÚI</a></li>
@@ -118,22 +97,24 @@
     <!-- end header  -->
 
     <!-- section  -->
-    <div class="login">
-        <div class="login__wrap">
-            <div class="login__title">
-                Đăng Nhập
+    <div class="log">
+        <div class="conatiner">
+            <div class="log__title">
+                <h1>Login</h1>
             </div>
-            <form action="" class="login__form">
-                <label for="fullName">Tên Đăng Nhập</label>
-                <input type="text" name="" id="fullName" placeholder="Nhập tên đăng nhập">
-
-                <label for="password">Mật Khẩu</label>
-                <input type="password" id="password" placeholder="Nhập mật khẩu">
+            <form onsubmit="login()">
+                <div class="log__input">
+                    <input type="text" name="username" id="username" placeholder="User Name">
+                </div>
+                <div class="log__input">
+                    <input type="text" name="email" id="email" placeholder="Email">
+                </div>
+                <div class="log__input">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </div>
+                <a href="dangky.html" class="signup-link">Singn Up</a>
+                <button id="btn" class="btn">Login</button>
             </form>
-            <div class="login__button">
-                <div class="login__text"><a href="indexLogin.html" onclick="Login()">Đăng nhập</a></div>
-                <div class="login__text"><a href="dangky.html">Đăng ký</a></div>
-            </div>
         </div>
     </div>
     <!-- end section  -->
@@ -235,42 +216,7 @@
         </div>
     </div>
     <!-- end footer  -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
-        <script>
-            const listAccount =[
-                {
-                    fullName: "Nguyễn Thị Kiều Hương",
-                    password: "1234"
-                },
-                {
-                    fullName: "Nguyễn Thị Hương",
-                    password: "5678"
-                }
-            ]
-            let isLogin = !!localStorage.getItem("token")
-            function CheckLogin(){
-                if(isLogin) {
-                    window.location.href = "indexLogin.html"//chuyển hướng đến trang chủ
-                }
-            }
-            function Login(){
-                let fullName = document.getElementById("fullName").value 
-                let password = document.getElementById("password").value 
-                let checkLogin = listAccount.some(value => value.fullName === fullName && value.password === password)
-                if(checkLogin){
-                    alert("đăng nhập thành công!")
-                    isLogin = true
-                    CheckLogin()
-                } else {
-                    alert("wrong username or password!")
-                }
-            }
-        </script>
+   <script src="asset/js/main.js"></script>
 </body>
 
 </html>

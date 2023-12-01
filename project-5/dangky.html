@@ -13,64 +13,43 @@
 
 <body>
     <style>
-        /* body{
-            background: #ddd;
-        } */
-        .register {
-            /* background: #fff; */
-            padding: 40px 0;
-        }
-
-        .register__wrap {
-            max-width: 500px;
+        .sign{
             margin: 0 auto;
-            background: #2E295F;
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .register__title {
             text-align: center;
-            font-size: 28px;
+            background: #24323D;
+            max-width: 450px;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        .sign__title h1{
+            color: #fff;
+        }
+        .sign__input{
+            margin: 25px;
+        }
+
+        .sign__input input{
+            padding: 15px;
+            width: 100%;
+            border: 2px solid #097177;
+            border-radius: 10px;
+        }
+
+        .sign-link{
+            display: block;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            margin-left: 70%;
+            color: #fff;
             font-weight: 600;
-            margin-bottom: 20px;
-            color: #fff;
+            text-decoration:underline;
         }
 
-        .register__form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .register__form label {
-            font-size: 17.5px;
-            margin: 10px 0;
-            color: #ddd;
-        }
-
-        .register__form input {
-            border: 1px solid #000;
-            border-radius: 6px;
+        .btn{
             padding: 10px 15px;
-        }
-
-        .register__text {
-            border: 1px solid #573A8A;
-            background: #573A8A;
-            padding: 10px 50px;
-            border-radius: 8px;
-            display: inline-block;
-            font-size: 14px;
-        }
-
-        .register__text a {
-            color: #fff;
-        }
-
-        .register__button{
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
+            background: #1AB188;
+            margin-bottom: 20px;
         }
     </style>
     <!-- header  -->
@@ -81,7 +60,6 @@
                     <img src="asset/images/logo.png" alt="">
                 </a>
                 <ul class="list">
-                    <!-- <li><a href="#">SALE 50%</a></li> -->
                     <li><a href="giay-nu.html">GIÀY NỮ</a></li>
                     <li><a href="giay-nam.html">GIÀY NAM</a></li>
                     <li><a href="balo-tui.html">BALO - TÚI</a></li>
@@ -119,29 +97,27 @@
     <!-- end header  -->
 
     <!-- section  -->
-    <div class="register">
-        <div class="register__wrap">
-            <div class="register__title">
-                Đăng Ký
+    <div class="sign">
+        <div class="container">
+            <div class="sign__title">
+                <h1>Sign Up</h1>
             </div>
-            <form action="" class="register__form">
-
-                <label for="phone">Số Điện Thoại: </label>
-                <input type="text" placeholder="+84" id="phone">
-
-                <label for="fullName">Tên Đăng Nhập: </label>
-                <input type="text" placeholder="Nhập tên đăng nhập" id="fullName">
-
-                <label for="password">Mật Khẩu: </label>
-                <input type="password" placeholder="Nhập mật khẩu" id="password">
-
-                <label for="passwordEnter">Nhập Lại Mật Khẩu:</label>
-                <input type="password" placeholder="Nhập lại mật khẩu" id="passwordEnter">
+            <form onsubmit=" signup()">
+                <div class="sign__input">
+                    <input id="username" type="text" placeholder="User Name" />
+                </div>
+                <div class="sign__input">
+                    <input id="email" type="text" placeholder="Email" />
+                </div>
+                <div class="sign__input">
+                    <input id="password" type="password" placeholder="Password" />
+                </div>
+                <div class="sign__input">
+                    <input id="password" type="password" placeholder="Confirm Password" />
+                </div>
+                <a href="dangnhap.html" class="sign-link">Login</a>
+                <button id="btnSignup" class="btn">Sign Up</button>
             </form>
-            <div class="register__button">
-                <div class="register__text" id="register__next"><a href="dangnhap.html">Đăng Ký</a></div>
-                <div class="register__text"><a href="dangnhap.html"> Đăng Nhập</a></div>
-            </div>
         </div>
     </div>
     <!-- end section  -->
@@ -243,13 +219,7 @@
         </div>
     </div>
     <!-- end footer  -->
-    <script>
-        const tt = document.querySelector("#register__next");
-        console.log(tt);
-        tt.addEventListener("click", () => {
-            alert("Đăng ký thành công");
-        })
-    </script>
+    <script src="asset/js/main.js"></script>
 </body>
 
 </html>
