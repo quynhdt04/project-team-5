@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../../vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="shortcut icon" href="../../images/favicon.png" />
+</head>
+<body>
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="navbar-brand-wrapper d-flex justify-content-center">
+            <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
+                <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../images/logo.svg" alt="logo"/></a>
+                <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="typcn typcn-th-menu"></span>
+                </button>
+            </div>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+            <ul class="navbar-nav mr-lg-2">
+                <li class="nav-item nav-profile dropdown">
+                    <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
+                        <img src="../../images/faces/face5.jpg" alt="profile"/>
+                        <span class="nav-profile-name">Admin</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                        <a class="dropdown-item">
+                            <i class="typcn typcn-cog-outline text-primary"></i>
+                            Thông tin cá nhân
+                        </a>
+                        <a class="dropdown-item">
+                            <i class="typcn typcn-eject text-primary"></i>
+                            Đăng xuất
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item nav-date dropdown">
+                    <a class="nav-link d-flex justify-content-center align-items-center" href="javascript:;">
+                        <h6 class="date mb-0">Hôm nay : 23/03/2023</h6>
+                        <i class="typcn typcn-calendar"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown mr-0">
+                    <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
+                        <i class="typcn typcn-bell mx-0"></i>
+                        <span class="count"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                        <p class="mb-0 font-weight-normal float-left dropdown-header">Thông báo</p>
+                        <a class="dropdown-item preview-item">
+                            <div class="preview-thumbnail">
+                                <div class="preview-icon bg-warning">
+                                    <i class="typcn typcn-cog-outline mx-0"></i>
+                                </div>
+                            </div>
+                            <div class="preview-item-content">
+                                <h6 class="preview-subject font-weight-normal">Cài đặt</h6>
+                                <p class="font-weight-light small-text mb-0 text-muted">
+                                    Tin nhắn bảo mật
+                                </p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item preview-item">
+                            <div class="preview-thumbnail">
+                                <div class="preview-icon bg-info">
+                                    <i class="typcn typcn-user mx-0"></i>
+                                </div>
+                            </div>
+                            <div class="preview-item-content">
+                                <h6 class="preview-subject font-weight-normal">Có 1 khách hàng đã đăng mới</h6>
+                                <p class="font-weight-light small-text mb-0 text-muted">
+                                    2 ngày trước
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="typcn typcn-th-menu"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- partial -->
+    <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
+        <div class="navbar-links-wrapper d-flex align-items-stretch">
+            <div class="nav-link">
+                <a href="javascript:;"><i class="typcn typcn-calendar-outline"></i></a>
+            </div>
+            <div class="nav-link">
+                <a href="javascript:;"><i class="typcn typcn-mail"></i></a>
+            </div>
+            <div class="nav-link">
+                <a href="javascript:;"><i class="typcn typcn-folder"></i></a>
+            </div>
+            <div class="nav-link">
+                <a href="javascript:;"><i class="typcn typcn-document-text"></i></a>
+            </div>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+            <ul class="navbar-nav mr-lg-2">
+                <li class="nav-item ml-0">
+                    <h4 class="mb-0">Đơn hàng</h4>
+                </li>
+                <li class="nav-item">
+                    <div class="d-flex align-items-baseline">
+                        <p class="mb-0">Trang chủ</p>
+                        <i class="typcn typcn-chevron-right"></i>
+                        <p class="mb-0">Thêm đơn hàng</p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item nav-search d-none d-md-block mr-0">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="search" aria-describedby="search">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="search">
+                              <i class="typcn typcn-zoom"></i>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">
+                        <i class="typcn typcn-device-desktop menu-icon"></i>
+                        <span class="menu-title">Trang tổng quan</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-product" aria-expanded="false" aria-controls="ui-basic">
+                        <i class="typcn typcn-mortar-board menu-icon"></i>
+                        <span class="menu-title">Sản phẩm</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="ui-product">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="../product/products.html">Danh sách sản phẩm</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-customer" aria-expanded="false" aria-controls="ui-basic">
+                        <i class="typcn typcn-group-outline menu-icon"></i>
+                        <span class="menu-title">Khách hàng</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="ui-customer">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="../customer/customers.html">Danh sách khách hàng</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-order" aria-expanded="false" aria-controls="ui-basic">
+                        <i class="typcn typcn-clipboard menu-icon"></i>
+                        <span class="menu-title">Đơn hàng</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="ui-order">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="./orders.html">Danh sách đơn hàng</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Thêm đơn hàng</h4>
+                                <form class="forms-sample">
+                                    <div class="form-group">
+                                        <label for="code">Mã đơn hàng<sup class="color-red">*</sup></label>
+                                        <input type="text" class="form-control" id="code" name="code" placeholder="Mã đơn hàng">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="status">Trạng thái<sup class="color-red">*</sup></label>
+                                        <select class="form-control select2 col-12" id="status" name="status">
+                                            <option value="new">Chưa xử lý</option>
+                                            <option value="success">Đã xử lý</option>
+                                            <option value="cancel">Huỷ đơn hàng</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-6 col-md-4">
+                                                <label for="customer">Khách hàng<sup class="color-red">*</sup></label>
+                                                <select class="form-control select2 col-12" id="customer" name="customer">
+                                                    <option>Chọn khách hàng</option>
+                                                    <option value="1">Nguyễn Văn An</option>
+                                                    <option value="2">Phạm Thị Giang</option>
+                                                    <option value="3">Phạm Thu Hằng</option>
+                                                    <option value="4">Nguyễn Kiến Vương</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-md-4">
+                                                <label for="phone">Số điện thoại <sup class="color-red">*</sup></label>
+                                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Số điện thoại">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-6 col-md-4">
+                                                <label for="date_create">Ngày tạo</label>
+                                                <input type="date" class="form-control" id="date_create" name="date_create" placeholder="Ngày tạo">
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-md-4">
+                                                <label for="date_ship">Ngày giao hàng</label>
+                                                <input type="date" class="form-control" id="date_ship" name="date_ship" placeholder="Ngày giao hàng">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Địa chỉ nhận hàng <sup class="color-red">*</sup></label>
+                                        <div id="address-group" class="form-group-border p-4">
+                                            <div class="row">
+                                                <div class="form-group col-4">
+                                                    <label>Tỉnh/ thành phố</label>
+                                                    <select class="form-control select2" name="city">
+                                                        <option value="1">Tp. Hà Nội</option>
+                                                        <option value="2">Tp. Hồ Chí Minh</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-4">
+                                                    <label>Quận/ huyện</label>
+                                                    <select class="form-control select2" name="district">
+                                                        <option value="1">Quận 1</option>
+                                                        <option value="2">Quận 2</option>
+                                                        <option value="3">Quận 3</option>
+                                                        <option value="4">Quận 4</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-4">
+                                                    <label>Phường/ xã</label>
+                                                    <select class="form-control select2" name="ward">
+                                                        <option value="1">Phường 1</option>
+                                                        <option value="2">Phường 2</option>
+                                                        <option value="3">Phường 3</option>
+                                                        <option value="4">Phường 4</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <input type="text" class="form-control" name="address" placeholder="Địa chỉ chi tiết">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Ghi chú đơn hàng</label>
+                                        <textarea class="form-control" id="description" rows="4"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-12 col-sm-3 col-md-2">
+                                                Chọn sản phẩm
+                                            </div>
+                                            <div class="col-12 col-sm-7 col-md-8">
+                                                <select class="form-control select2" name="selectProduct" id="selectProduct">
+                                                    <option>Chọn sản phẩm</option>
+                                                    <option value="1">Giày Thể Thao Nam MWC NATT- 5471</option>
+                                                    <option value="2">Giày Thể Thao Nam MWC NATT- 5472</option>
+                                                    <option value="3">Giày Thể Thao Nam MWC NATT- 5473</option>
+                                                    <option value="4">Giày Thể Thao Nam MWC NATT- 5474</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12 col-sm-2 col-md-2">
+                                                <a id="btn-choose-product" class="btn btn-info mr-2">Chọn</a>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div id="table-order" class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="10" class="text-center">STT</th>
+                                                            <th width="60%">Tên sản phẩm</th>
+                                                            <th width="10%" class="text-right">Đơn giá</th>
+                                                            <th width="10%">Số lượng</th>
+                                                            <th width="10%" class="text-right">Thành tiền</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="4" class="text-right">
+                                                                Phí giao hàng (VNĐ)
+                                                            </td>
+                                                            <td class="text-right">
+                                                                <input type="number" class="text-right" value="0" min="1000" minlength="1000" id="feeShipping" name="feeShipping">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" class="text-right">
+                                                                <strong>Tổng tiền</strong>
+                                                            </td>
+                                                            <td class="text-right">
+                                                                <input type="hidden" id="inputTotalPrice">
+                                                                <strong id="totalPrice">0 VNĐ</strong>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="./orders.html" class="btn btn-primary mr-2">Lưu lại</a>
+                                    <a href="./orders.html" class="btn btn-light">Huỷ bỏ</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023. All rights reserved.</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- base:js -->
+<script src="../../vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- inject:js -->
+<script src="../../js/hoverable-collapse.js"></script>
+<script src="../../js/template.js"></script>
+<!-- endinject -->
+<!-- plugin js for this page -->
+<script src="../../vendors/select2/select2.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- Custom js for this page-->
+<script src="../../js/select2.js"></script>
+<script src="../../vendors/tinymce/tinymce.min.js"></script>
+<!-- End custom js for this page-->
+<script>
+    const listProduct = {
+        1 : {
+            name: "Giày Thể Thao Nam MWC NATT- 5471",
+            qty: 200,
+            price: 230000
+        },
+        2 : {
+            name: "Giày Thể Thao Nam MWC NATT- 5472",
+            qty: 200,
+            price: 220000
+        },
+        3 : {
+            name: "Giày Thể Thao Nam MWC NATT- 5473",
+            qty: 200,
+            price: 229000
+        },
+        4 : {
+            name: "Giày Thể Thao Nam MWC NATT- 5474",
+            qty: 150,
+            price: 150000
+        }
+    };
+
+    function numberFormat(number) {
+        return Intl.NumberFormat('vi-vn').format(number);
+    }
+
+    function removeProduct(elmCurrent) {
+        const idCurrent = $(elmCurrent).closest(".product-choose").find('input[name="id"]').val();
+        var totalPrice = 0;
+        var stt = 1;
+
+        $(".product-choose").each(function (index, elm) {
+            const id = $(elm).find('input[name="id"]').val();
+            const qtyVal = $(elm).find('input[name="id"]').prev().val();
+            const product = listProduct[id];
+
+            if (id === idCurrent) {
+                $(elm).remove();
+            } else {
+                totalPrice += (product.price * qtyVal);
+                $(elm).find(".stt").text(stt);
+                stt += 1;
+            }
+        });
+
+        if (totalPrice === 0) {
+            $("#feeShipping").val(0)
+            $("#inputTotalPrice").val(0);
+            $("#totalPrice").text("0 VNĐ");
+        } else {
+            const feeShipping = $("#feeShipping").val();
+            $("#inputTotalPrice").val(totalPrice - feeShipping);
+            $("#totalPrice").text(numberFormat(totalPrice - feeShipping) + " VNĐ");
+        }
+    }
+
+    function onChangeQty(elmCurrent) {
+        const idCurrent = $(elmCurrent).closest(".product-choose").find('input[name="id"]').val();
+        const product = listProduct[idCurrent];
+        const qtyValNew = parseInt($(elmCurrent).val());
+
+        if (qtyValNew > product.qty) {
+            if ($(elmCurrent).parent().find(".error-qty").length === 0) {
+                $(elmCurrent).parent().append('<div class="color-red mt-1 error-qty">Số lượng vượt quá tồn kho cho phép là ' + product.qty + '</div>')
+            }
+        } else {
+            var totalPrice = 0;
+            $(elmCurrent).parent().find(".error-qty").remove();
+
+            $(".product-choose").each(function (index, elm) {
+                const id = $(elm).find('input[name="id"]').val();
+                const product = listProduct[id];
+
+                if (id === idCurrent) {
+                    const totalPriceProduct = product.price * qtyValNew;
+                    $(elmCurrent).closest(".product-choose").find('input[name="total"]').val(totalPriceProduct);
+                    $(elmCurrent).closest(".product-choose").find(".totalPriceProduct").text(numberFormat(totalPriceProduct) + " VNĐ");
+                    totalPrice += parseInt(totalPriceProduct);
+                } else {
+                    const totalPriceProduct = $(elm).find('input[name="total"]').val();
+                    totalPrice += parseInt(totalPriceProduct);
+                }
+            });
+
+            const feeShipping = $("#feeShipping").val();
+            $("#inputTotalPrice").val(parseInt(totalPrice) - parseInt(feeShipping));
+            $("#totalPrice").text(numberFormat(parseInt(totalPrice) - parseInt(feeShipping)) + " VNĐ");
+        }
+    }
+
+    $(document).ready(function () {
+        $("#feeShipping").on("change", function () {
+            var val = $(this).val();
+            var totalPrice = 0;
+
+            $(".product-choose").each(function (index, elm) {
+                const totalPriceProduct = $(elm).find('input[name="total"]').val();
+                totalPrice += parseInt(totalPriceProduct);
+            });
+
+            if (val === "") {
+                val = 0;
+            }
+
+            totalPrice -= val;
+
+            if (totalPrice <= 0) {
+                totalPrice = 0;
+
+                if ($(this).parent().find(".error-feeshipping").length === 0) {
+                    $(this).parent().append('<div class="color-red mt-1 error-feeshipping">Phí giao hàng vượt quá giá trị đơn hàng</div>');
+                }
+            } else {
+                $(this).parent().find(".error-feeshipping").remove();
+            }
+
+            $("#inputTotalPrice").val(totalPrice);
+            $("#totalPrice").text(numberFormat(totalPrice) + " VNĐ");
+            $("#feeShipping").val(val);
+
+        });
+
+        $("#btn-choose-product").click(function () {
+            var productChoose = $("#selectProduct").val();
+
+            if (productChoose !== "") {
+                var productDetail = listProduct[productChoose];
+                if (typeof productDetail !== "undefined") {
+                    var checkExistedProduct = false;
+                    var totalPrice = 0;
+                    var stt = 0;
+
+                    $(".product-choose").each(function (index, elm) {
+                       const id = $(elm).find('input[name="id"]').val();
+                       const qtyVal = $(elm).find('input[name="id"]').prev().val();
+                       const product = listProduct[id];
+
+                       if (id === productChoose) {
+                           const qtyValNew = parseInt(qtyVal) + 1;
+
+                           if (qtyValNew <= product.qty) {
+                               $(elm).find('input[name="id"]').prev().val(qtyValNew);
+                               totalPrice += (product.price * qtyValNew);
+                               $(elm).find('input[name="total"]').val(product.price * qtyValNew);
+                               $(elm).find(".totalPriceProduct").text(numberFormat(product.price * qtyValNew) + " VNĐ");
+                           } else {
+                               totalPrice += (product.price * qtyVal);
+                           }
+
+                           checkExistedProduct = true;
+                       } else {
+                           totalPrice += (product.price * qtyVal);
+                       }
+
+                        stt += 1;
+                    });
+
+                    if (!checkExistedProduct) {
+                        var trTable = '<tr class="product-choose">\n' +
+                            '                                                            <td class="text-center stt">{stt}</td>\n' +
+                            '                                                            <td>\n' +
+                            '                                                                <ul>\n' +
+                            '                                                                    <li>{productName}</li>\n' +
+                            '                                                                    <li>\n' +
+                            '                                                                        Màu sắc:\n' +
+                            '                                                                        <select class="color" name="color">\n' +
+                            '                                                                            <option value="color1">Đen</option>\n' +
+                            '                                                                            <option value="color2">Trắng</option>\n' +
+                            '                                                                            <option value="color3">Xám</option>\n' +
+                            '                                                                            <option value="color4">Ghi</option>\n' +
+                            '                                                                            <option value="color5">Kem</option>\n' +
+                            '                                                                            <option value="color6">Nâu</option>\n' +
+                            '                                                                            <option value="color7">Hồng</option>\n' +
+                            '                                                                            <option value="color8">Tím</option>\n' +
+                            '                                                                            <option value="color9">Cam</option>\n' +
+                            '                                                                            <option value="color10">Xanh Biển</option>\n' +
+                            '                                                                            <option value="color11">Xanh Đậm</option>\n' +
+                            '                                                                            <option value="color12">Xanh Lá</option>\n' +
+                            '                                                                        </select>\n' +
+                            '                                                                    </li>\n' +
+                            '                                                                    <li>\n' +
+                            '                                                                        Kích thước:\n' +
+                            '                                                                        <select class="size" name="size">\n' +
+                            '                                                                            <option value="35">35</option>\n' +
+                            '                                                                            <option value="36">36</option>\n' +
+                            '                                                                            <option value="37">37</option>\n' +
+                            '                                                                            <option value="37">38</option>\n' +
+                            '                                                                            <option value="39">39</option>\n' +
+                            '                                                                            <option value="40">40</option>\n' +
+                            '                                                                        </select>\n' +
+                            '                                                                    </li>\n' +
+                            '                                                                    <li>\n' +
+                            '                                                                        <a class="btn btn-danger btn-icon-text btn-remove p-1" onclick="return removeProduct(this);">\n' +
+                            '                                                                            <i class="typcn typcn-delete"></i> Xoá\n' +
+                            '                                                                        </a>\n' +
+                            '                                                                    </li>\n' +
+                            '                                                                </ul>\n' +
+                            '                                                            </td>\n' +
+                            '                                                            <td class="text-right">{price} VNĐ</td>\n' +
+                            '                                                            <td>\n' +
+                            '                                                                <input type="number" min="1" name="qty" class="w-100 text-right" value="1" onchange="return onChangeQty(this);">\n' +
+                            '                                                                <input type="hidden" name="id" value="{id}">' +
+                            '                                                                <input type="hidden" name="total" value="{total}">\n' +
+                            '                                                            </td>\n' +
+                            '                                                            <td class="text-right totalPriceProduct">\n' +
+                            '                                                                {totalPrice} VNĐ\n' +
+                            '                                                            </td>\n' +
+                            '                                                        </tr>';
+
+                        trTable = trTable.replace("{stt}", parseInt(stt) + 1);
+                        trTable = trTable.replace("{id}", productChoose);
+                        trTable = trTable.replace("{productName}", productDetail.name);
+                        trTable = trTable.replace("{price}", numberFormat(productDetail.price));
+                        trTable = trTable.replace("{totalPrice}", numberFormat(productDetail.price));
+                        trTable = trTable.replace("{total}", productDetail.price);
+                        totalPrice += parseInt(productDetail.price);
+                        $("#table-order table tbody").append(trTable);
+                    }
+
+                    const feeShipping = $("#feeShipping").val();
+                    $("#inputTotalPrice").val(totalPrice - feeShipping);
+                    $("#totalPrice").text(numberFormat(totalPrice - feeShipping) + " VNĐ");
+                }
+            }
+        });
+    });
+</script>
+</body>
+
+</html>

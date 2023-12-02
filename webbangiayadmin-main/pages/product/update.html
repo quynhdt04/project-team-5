@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../../vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/file-upload-preview.css"/>
+    <link rel="shortcut icon" href="../../images/favicon.png" />
+</head>
+<body>
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="navbar-brand-wrapper d-flex justify-content-center">
+            <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
+                <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../images/logo.svg" alt="logo"/></a>
+                <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="typcn typcn-th-menu"></span>
+                </button>
+            </div>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+            <ul class="navbar-nav mr-lg-2">
+                <li class="nav-item nav-profile dropdown">
+                    <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
+                        <img src="../../images/faces/face5.jpg" alt="profile"/>
+                        <span class="nav-profile-name">Admin</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                        <a class="dropdown-item">
+                            <i class="typcn typcn-cog-outline text-primary"></i>
+                            Thông tin cá nhân
+                        </a>
+                        <a class="dropdown-item">
+                            <i class="typcn typcn-eject text-primary"></i>
+                            Đăng xuất
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item nav-date dropdown">
+                    <a class="nav-link d-flex justify-content-center align-items-center" href="javascript:;">
+                        <h6 class="date mb-0">Hôm nay : 23/03/2023</h6>
+                        <i class="typcn typcn-calendar"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown mr-0">
+                    <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
+                        <i class="typcn typcn-bell mx-0"></i>
+                        <span class="count"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                        <p class="mb-0 font-weight-normal float-left dropdown-header">Thông báo</p>
+                        <a class="dropdown-item preview-item">
+                            <div class="preview-thumbnail">
+                                <div class="preview-icon bg-warning">
+                                    <i class="typcn typcn-cog-outline mx-0"></i>
+                                </div>
+                            </div>
+                            <div class="preview-item-content">
+                                <h6 class="preview-subject font-weight-normal">Cài đặt</h6>
+                                <p class="font-weight-light small-text mb-0 text-muted">
+                                    Tin nhắn bảo mật
+                                </p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item preview-item">
+                            <div class="preview-thumbnail">
+                                <div class="preview-icon bg-info">
+                                    <i class="typcn typcn-user mx-0"></i>
+                                </div>
+                            </div>
+                            <div class="preview-item-content">
+                                <h6 class="preview-subject font-weight-normal">Có 1 khách hàng đã đăng mới</h6>
+                                <p class="font-weight-light small-text mb-0 text-muted">
+                                    2 ngày trước
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="typcn typcn-th-menu"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- partial -->
+    <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
+        <div class="navbar-links-wrapper d-flex align-items-stretch">
+            <div class="nav-link">
+                <a href="javascript:;"><i class="typcn typcn-calendar-outline"></i></a>
+            </div>
+            <div class="nav-link">
+                <a href="javascript:;"><i class="typcn typcn-mail"></i></a>
+            </div>
+            <div class="nav-link">
+                <a href="javascript:;"><i class="typcn typcn-folder"></i></a>
+            </div>
+            <div class="nav-link">
+                <a href="javascript:;"><i class="typcn typcn-document-text"></i></a>
+            </div>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+            <ul class="navbar-nav mr-lg-2">
+                <li class="nav-item ml-0">
+                    <h4 class="mb-0">Sản phẩm</h4>
+                </li>
+                <li class="nav-item">
+                    <div class="d-flex align-items-baseline">
+                        <p class="mb-0">Trang chủ</p>
+                        <i class="typcn typcn-chevron-right"></i>
+                        <p class="mb-0">Thêm sản phẩm</p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item nav-search d-none d-md-block mr-0">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="search" aria-describedby="search">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="search">
+                              <i class="typcn typcn-zoom"></i>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">
+                        <i class="typcn typcn-device-desktop menu-icon"></i>
+                        <span class="menu-title">Trang tổng quan</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-product" aria-expanded="false" aria-controls="ui-basic">
+                        <i class="typcn typcn-mortar-board menu-icon"></i>
+                        <span class="menu-title">Sản phẩm</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="ui-product">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="./products.html">Danh sách sản phẩm</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-customer" aria-expanded="false" aria-controls="ui-basic">
+                        <i class="typcn typcn-group-outline menu-icon"></i>
+                        <span class="menu-title">Khách hàng</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="ui-customer">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="../customer/customers.html">Danh sách khách hàng</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-order" aria-expanded="false" aria-controls="ui-basic">
+                        <i class="typcn typcn-clipboard menu-icon"></i>
+                        <span class="menu-title">Đơn hàng</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="ui-order">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="../order/orders.html">Danh sách đơn hàng</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Thêm sản phẩm</h4>
+                                <form class="forms-sample">
+                                    <div class="form-group">
+                                        <label for="product_name">Tên sản phẩm<sup class="color-red">*</sup></label>
+                                        <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Tên sản phẩm">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product_link">Đường dẫn<sup class="color-red">*</sup></label>
+                                        <input type="text" class="form-control" id="product_link" name="product_link" placeholder="Đường dẫn sản phẩm">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="categories">Danh mục sản phẩm<sup class="color-red">*</sup></label>
+                                        <select class="form-control select2 col-12" id="categories" name="categories">
+                                            <option value="giaynu">Giày nữ</option>
+                                            <option value="giaynam">Giày nam</option>
+                                            <option value="balo/tui">Balo - Túi</option>
+                                            <option value="depnu">Dép nữ</option>
+                                            <option value="depnam">Dép nam</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Giá<sup class="color-red">*</sup></label>
+                                        <input type="number" class="form-control" id="price" name="price" placeholder="Giá sản phẩm">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-6 col-md-4">
+                                                <div class="custom-file-container" data-upload-id="avatar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="custom-file-container" data-upload-id="imageOther"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Thông tin chi tiết số lượng sản phẩm<sup class="color-red">*</sup></label>
+                                        <div id="detail-group" class="form-group-border p-2">
+                                            <div id="detail-qty1" class="form-group-border p-2 mb-2 detail-qty">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-sm-6 col-12 mb-2">
+                                                        <label for="color">Màu sắc</label>
+                                                        <select class="form-control select2 color" multiple id="color" name="color">
+                                                            <option value="color1">Đen</option>
+                                                            <option value="color2">Trắng</option>
+                                                            <option value="color3">Xám</option>
+                                                            <option value="color4">Ghi</option>
+                                                            <option value="color5">Kem</option>
+                                                            <option value="color6">Nâu</option>
+                                                            <option value="color7">Hồng</option>
+                                                            <option value="color8">Tím</option>
+                                                            <option value="color9">Cam</option>
+                                                            <option value="color10">Xanh Biển</option>
+                                                            <option value="color11">Xanh Đậm</option>
+                                                            <option value="color12">Xanh Lá</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-6 col-12 mb-2">
+                                                        <label for="size">Kích thước sản phẩm</label>
+                                                        <select class="form-control select2 size" multiple id="size" name="size">
+                                                            <option value="35">35</option>
+                                                            <option value="36">36</option>
+                                                            <option value="37">37</option>
+                                                            <option value="37">38</option>
+                                                            <option value="39">39</option>
+                                                            <option value="40">40</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-6 col-12 mb-2">
+                                                        <label for="quantity">Số lượng</label>
+                                                        <input type="number" class="form-control quantity" id="quantity" name="quantity" placeholder="Số lượng">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a id="btn-add" class="btn btn-info btn-icon-text btn-sm mt-4">
+                                            <i class="typcn typcn-plus"></i>
+                                        </a>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="status">Trạng thái sản phẩm</label>
+                                        <select class="form-control select2" id="status" name="status">
+                                            <option value="active">Hoạt động</option>
+                                            <option value="inactive">Không hoạt động</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Mô tả sản phẩm</label>
+                                        <textarea class="form-control" id="description" rows="4"></textarea>
+                                    </div>
+                                    <a href="./products.html" class="btn btn-primary mr-2">Lưu lại</a>
+                                    <a href="./products.html" class="btn btn-light">Huỷ bỏ</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023. All rights reserved.</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- base:js -->
+<script src="../../vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- inject:js -->
+<script src="../../js/hoverable-collapse.js"></script>
+<script src="../../js/template.js"></script>
+<!-- endinject -->
+<!-- plugin js for this page -->
+<script src="../../vendors/select2/select2.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- Custom js for this page-->
+<script src="../../js/select2.js"></script>
+<script src="../../vendors/tinymce/tinymce.min.js"></script>
+<script src="../../js/file-upload-preview.js"></script>
+<!-- End custom js for this page-->
+<script>
+    new FileUploadWithPreview.FileUploadWithPreview("avatar", {
+        accept: ".png,.jpg",
+        text: {
+            browse: 'Chọn',
+            chooseFile: 'Chọn ảnh...',
+            label: 'Hình đại diện<sup class="color-red">*</sup>',
+        }
+    });
+    new FileUploadWithPreview.FileUploadWithPreview("imageOther", {
+        accept: ".png,.jpg",
+        text: {
+            browse: 'Chọn',
+            chooseFile: 'Chọn ảnh...',
+            label: 'Hình ảnh khác',
+            selectedCount: "ảnh đã chọn"
+        },
+        images: {
+            backgroundImage: "",
+            baseImage: "",
+        },
+        maxFileCount: 20,
+        multiple: true,
+    });
+
+    function removeDetail (div) {
+        $(div).parent().remove();
+    }
+
+    $(document).ready(function () {
+        let count = 1;
+        tinymce.init({
+            selector: 'textarea#description',
+            plugins: ' preview importcss searchreplace autolink autosave directionality visualblocks visualchars image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists  wordcount   imagetools textpattern noneditable help   charmap     emoticons  ',
+            mobile: {
+                plugins: ' preview importcss searchreplace autolink autosave directionality visualblocks visualchars image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists  wordcount   textpattern noneditable help  charmap    emoticons '
+            },
+            menu: {
+                tc: {
+                    title: 'Comments',
+                    items: 'addcomment showcomments deleteallconversations'
+                }
+            },
+            menubar: 'file edit view insert format tools table tc help',
+            toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist  | forecolor backcolor casechange  removeformat | pagebreak | charmap emoticons | fullscreen  preview save  | insertfile image media  template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
+            autosave_ask_before_unload: true,
+            autosave_interval: '30s',
+            autosave_prefix: '{path}{query}-{id}-',
+            autosave_restore_when_empty: false,
+            autosave_retention: '2m',
+            image_advtab: true,
+            link_list: [
+                { title: 'My page 1', value: 'https://www.tiny.cloud' },
+                { title: 'My page 2', value: 'http://www.moxiecode.com' }
+            ],
+            image_list: [
+                { title: 'My page 1', value: 'https://www.tiny.cloud' },
+                { title: 'My page 2', value: 'http://www.moxiecode.com' }
+            ],
+            image_class_list: [
+                { title: 'None', value: '' },
+                { title: 'Some class', value: 'class-name' }
+            ],
+            importcss_append: true,
+            templates: [
+                { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
+                { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
+                { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
+            ],
+            template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+            template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+            height: 200,
+            image_caption: true,
+            quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+            noneditable_noneditable_class: 'mceNonEditable',
+            toolbar_mode: 'sliding',
+            spellchecker_ignore_list: ['Ephox', 'Moxiecode'],
+            content_style: '.mymention{ color: gray; }',
+            contextmenu: 'link image imagetools table configure',
+            a11y_advanced_options: true,
+        });
+
+
+        $("#btn-add").click(function () {
+            var divClone = $("#detail-qty1").clone();
+            var btnRemove = '<a onclick="return removeDetail(this);" class="btn btn-danger btn-icon-text btn-remove p-1">\n' +
+            '<i class="typcn typcn-delete"></i>Xoá\n' +
+            '</a>';
+            count += 1;
+            divClone.attr("id", "detail-qty" + count);
+            divClone.append(btnRemove);
+            $("#detail-group").append(divClone);
+            var detailQtySize = $("#detail-qty" + count).find(".size");
+            var detailQtyColor = $("#detail-qty" + count).find(".color");
+
+            if (detailQtySize.hasClass("select2-hidden-accessible")) {
+                detailQtySize = detailQtySize.select2();
+                detailQtySize.select2("destroy");
+                detailQtySize.next().remove();
+                detailQtySize.select2();
+            }
+
+            if (detailQtyColor.hasClass("select2-hidden-accessible")) {
+                detailQtyColor = detailQtyColor.select2();
+                detailQtyColor.select2("destroy");
+                detailQtyColor.next().remove();
+                detailQtyColor.select2();
+            }
+
+            $("#detail-qty" + count).find(".quantity").val("");
+        });
+    });
+</script>
+</body>
+
+</html>

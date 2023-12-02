@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../../vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap-table.min.css">
+    <link rel="shortcut icon" href="../../images/favicon.png" />
+</head>
+<body>
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="navbar-brand-wrapper d-flex justify-content-center">
+            <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
+                <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../images/logo.svg" alt="logo"/></a>
+                <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="typcn typcn-th-menu"></span>
+                </button>
+            </div>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+            <ul class="navbar-nav mr-lg-2">
+                <li class="nav-item nav-profile dropdown">
+                    <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
+                        <img src="../../images/faces/face5.jpg" alt="profile"/>
+                        <span class="nav-profile-name">Admin</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                        <a class="dropdown-item">
+                            <i class="typcn typcn-cog-outline text-primary"></i>
+                            Thông tin cá nhân
+                        </a>
+                        <a class="dropdown-item">
+                            <i class="typcn typcn-eject text-primary"></i>
+                            Đăng xuất
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item nav-date dropdown">
+                    <a class="nav-link d-flex justify-content-center align-items-center" href="javascript:;">
+                        <h6 class="date mb-0">Hôm nay : 23/03/2023</h6>
+                        <i class="typcn typcn-calendar"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown mr-0">
+                    <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
+                        <i class="typcn typcn-bell mx-0"></i>
+                        <span class="count"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                        <p class="mb-0 font-weight-normal float-left dropdown-header">Thông báo</p>
+                        <a class="dropdown-item preview-item">
+                            <div class="preview-thumbnail">
+                                <div class="preview-icon bg-warning">
+                                    <i class="typcn typcn-cog-outline mx-0"></i>
+                                </div>
+                            </div>
+                            <div class="preview-item-content">
+                                <h6 class="preview-subject font-weight-normal">Cài đặt</h6>
+                                <p class="font-weight-light small-text mb-0 text-muted">
+                                    Tin nhắn bảo mật
+                                </p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item preview-item">
+                            <div class="preview-thumbnail">
+                                <div class="preview-icon bg-info">
+                                    <i class="typcn typcn-user mx-0"></i>
+                                </div>
+                            </div>
+                            <div class="preview-item-content">
+                                <h6 class="preview-subject font-weight-normal">Có 1 khách hàng đã đăng mới</h6>
+                                <p class="font-weight-light small-text mb-0 text-muted">
+                                    2 ngày trước
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="typcn typcn-th-menu"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- partial -->
+    <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
+        <div class="navbar-links-wrapper d-flex align-items-stretch">
+            <div class="nav-link">
+                <a href="javascript:;"><i class="typcn typcn-calendar-outline"></i></a>
+            </div>
+            <div class="nav-link">
+                <a href="javascript:;"><i class="typcn typcn-mail"></i></a>
+            </div>
+            <div class="nav-link">
+                <a href="javascript:;"><i class="typcn typcn-folder"></i></a>
+            </div>
+            <div class="nav-link">
+                <a href="javascript:;"><i class="typcn typcn-document-text"></i></a>
+            </div>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+            <ul class="navbar-nav mr-lg-2">
+                <li class="nav-item ml-0">
+                    <h4 class="mb-0">Sản phẩm</h4>
+                </li>
+                <li class="nav-item">
+                    <div class="d-flex align-items-baseline">
+                        <p class="mb-0">Trang chủ</p>
+                        <i class="typcn typcn-chevron-right"></i>
+                        <p class="mb-0">Danh sách sản phẩm </p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item nav-search d-none d-md-block mr-0">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="search" aria-describedby="search">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="search">
+                              <i class="typcn typcn-zoom"></i>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">
+                        <i class="typcn typcn-device-desktop menu-icon"></i>
+                        <span class="menu-title">Trang tổng quan</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-product" aria-expanded="false" aria-controls="ui-basic">
+                        <i class="typcn typcn-mortar-board menu-icon"></i>
+                        <span class="menu-title">Sản phẩm</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="ui-product">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="./products.html">Danh sách sản phẩm</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-customer" aria-expanded="false" aria-controls="ui-basic">
+                        <i class="typcn typcn-group-outline menu-icon"></i>
+                        <span class="menu-title">Khách hàng</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="ui-customer">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="../customer/customers.html">Danh sách khách hàng</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-order" aria-expanded="false" aria-controls="ui-basic">
+                        <i class="typcn typcn-clipboard menu-icon"></i>
+                        <span class="menu-title">Đơn hàng</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="ui-order">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="../order/orders.html">Danh sách đơn hàng</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+
+                <div class="row">
+                    <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <div class="row d-flex align-items-center">
+                                        <div class="col-md-9">Danh sách sản phẩm</div>
+                                        <div class="col-md-3 d-flex justify-content-end">
+                                            <a href="./update.html" class="btn btn-info btn-icon-text">
+                                                <i class="typcn typcn-plus btn-icon-append"></i>
+                                                Thêm sản phẩm
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover product-table">
+                                        <thead>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Hình ảnh</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Trạng thái</th>
+                                            <th>Ngày tạo</th>
+                                            <th>Hành động</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    <img src="../../images/products/product1.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày cao gót MWC NUCG - 4430</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nữ</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>195.000 VNĐ</li>
+                                                        <li>SL: 0</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-danger">Không hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    23/02/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                    <img src="../../images/products/product2.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày cao gót MWC NUCG - 4443</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nữ</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>295.000 VNĐ</li>
+                                                        <li>SL: 190</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    23/02/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>
+                                                    <img src="../../images/products/product3.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày cao gót MWC NUCG - 4439</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nữ</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>295.000 VNĐ</li>
+                                                        <li>SL: 250</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    23/02/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>
+                                                    <img src="../../images/products/product4.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày cao gót MWC NUCG - 4442</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nữ</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>235.000 VNĐ</li>
+                                                        <li>SL: 200</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    23/02/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>
+                                                    <img src="../../images/products/product5.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày cao gót MWC NUCG - 4408 </li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nữ</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>235.000 VNĐ</li>
+                                                        <li>SL: 200</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    23/02/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>
+                                                    <img src="../../images/products/product6.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày cao gót MWC NUCG - 4433</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nữ</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>235.000 VNĐ</li>
+                                                        <li>SL: 200</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    23/02/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>
+                                                    <img src="../../images/products/product7.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày thể thao nữ MWC NUTT - A120</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nữ</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>345.000 VNĐ</li>
+                                                        <li>SL: 250</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    12/08/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>
+                                                    <img src="../../images/products/product8.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày thể thao nữ MWC NUTT - A108</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nữ</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>270.000 VNĐ</li>
+                                                        <li>SL: 300</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    12/08/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>
+                                                    <img src="../../images/products/product9.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày thể thao nữ MWC NUTT - A118 </li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nữ</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>295.000 VNĐ</li>
+                                                        <li>SL: 200</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    12/08/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>
+                                                    <img src="../../images/products/product10.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày thể thao nữ MWC NUTT - A123</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nữ</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>295.000 VNĐ</li>
+                                                        <li>SL: 200</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    12/08/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>
+                                                    <img src="../../images/products/product11.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày Sandal Cao Gót MWC - 3548 </li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nữ</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>150.000 VNĐ</li>
+                                                        <li>SL: 200</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    12/08/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>
+                                                    <img src="../../images/products/product12.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày thể thao nữ MWC NUTT - A105 </li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nữ</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>235.000 VNĐ</li>
+                                                        <li>SL: 350</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    12/08/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td>
+                                                    <img src="../../images/products/product13.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày Thể Thao Nam MWC NATT - 5446 </li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nam</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>250.000 VNĐ</li>
+                                                        <li>SL: 250</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    12/08/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>
+                                                    <img src="../../images/products/product14.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày Thể Thao Nam MWC NATT - 5467</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nam</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>345.000 VNĐ</li>
+                                                        <li>SL: 200</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    10/10/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>15</td>
+                                                <td>
+                                                    <img src="../../images/products/product15.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày Thể Thao Nam MWC NATT - 5470</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nam</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>275.000 VNĐ</li>
+                                                        <li>SL: 270</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    10/10/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>16</td>
+                                                <td>
+                                                    <img src="../../images/products/product16.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Giày Thể Thao Nam MWC NATT - 5471</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Giày nam</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>345.000 VNĐ</li>
+                                                        <li>SL: 300</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    10/10/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>17</td>
+                                                <td>
+                                                    <img src="../../images/products/product17.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Balô MWC BALO- 1203 </li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Balo - Túi</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>235.000 VNĐ</li>
+                                                        <li>SL: 150</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    10/10/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>18</td>
+                                                <td>
+                                                    <img src="../../images/products/product18.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Balô MWC BALO - 1205</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Balo - Túi</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>250.000 VNĐ</li>
+                                                        <li>SL: 150</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    10/10/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>19</td>
+                                                <td>
+                                                    <img src="../../images/products/product19.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Balô MWC BALO - 1200 </li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Balo - Túi</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>295.000 VNĐ</li>
+                                                        <li>SL: 200</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    10/10/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>20</td>
+                                                <td>
+                                                    <img src="../../images/products/product20.jpg" alt="image">
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Balô MWC BALO - 1195</li>
+                                                        <li><i class="typcn typcn-th-large btn-icon-append"></i>Balo - Túi</li>
+                                                        <li><i class="typcn typcn-tag btn-icon-append"></i>295.000 VNĐ</li>
+                                                        <li>SL: 250</li>
+                                                    </ul>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-success">Hoạt động</label>
+                                                </td>
+                                                <td>
+                                                    10/10/2023
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="./update.html" type="button" class="btn btn-light btn-sm">
+                                                        <i class="typcn typcn-eye btn-icon-append"></i>Link
+                                                    </a>
+                                                    <a href="./update.html" type="button" class="btn btn-info btn-sm">
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>Sửa
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <i class="typcn typcn-trash btn-icon-append"></i>Xoá
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Cảnh báo</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <i class="typcn typcn-info-outline text-danger" style="font-size: 28px"></i>Bạn có muốn xoá sản phẩm này?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-light" data-dismiss="modal">Huỷ bỏ</button>
+                                                <button type="button" class="btn btn-danger">Xoá</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023. All rights reserved.</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- base:js -->
+<script src="../../vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- inject:js -->
+<script src="../../js/hoverable-collapse.js"></script>
+<script src="../../js/template.js"></script>
+<!-- endinject -->
+<!-- plugin js for this page -->
+<script src="../../vendors/select2/select2.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- Custom js for this page-->
+<script src="../../js/select2.js"></script>
+<script src="../../js/bootstrap-table.min.js"></script>
+<!-- End custom js for this page-->
+</body>
+
+</html>
+
